@@ -5,11 +5,12 @@ public class DescentEvent {
     int Altitude = 0;
     int Status = 0;
 
-    public DescentEvent(int t, int sp, int f, int h, int st) {
-        this.Seconds = t * 10;
-        this.Velocity = sp;
-        this.Fuel = f;
-        this.Altitude = h;
+    public DescentEvent(int seconds, int velocity, int fuel, int altitude, int st) {
+        this.Seconds = seconds * 10;
+        this.Velocity = velocity;
+        this.Fuel = fuel;
+        this.Altitude = altitude;
+        this.Status=st;
     }
 
     public int getVelocity() {
