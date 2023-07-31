@@ -104,7 +104,7 @@ public class Vehicle {
             if (this.Velocity < 10 && this.Velocity > 3) {
                 Flying2 = CRASHED;
             }
-            if (this.Velocity < 3)
+            if (this.Velocity <= 3)
             {
                 Flying2 = SUCCESS;
             }

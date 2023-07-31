@@ -35,12 +35,35 @@ public class SimulationTest {
     }
 
     @Test
-    public void runSimulationComputerRandom() {
+    public void testRandom()
+    {
+
         BurnStream burnSource = new OnBoardComputer();
         Simulation game = new Simulation(new Vehicle(Simulation.randomaltitude()));
-        //Simulation game = new Simulation(new Vehicle(15000));
         int okay = game.runSimulation(burnSource);
-        Assert.assertEquals(okay, Vehicle.SUCCESS);
+        Assert.assertEquals(okay,Vehicle.SUCCESS);
+    }
+
+
+    @Test
+    public void runSimulationTooManyTimes() {
+        int totalTests=1000;
+        int successCount =0;
+        for(int i =0; i<totalTests; i++) {
+            BurnStream burnSource = new OnBoardComputer();
+            Simulation game = new Simulation(new Vehicle(Simulation.randomaltitude()));
+            //Simulation game = new Simulation(new Vehicle(15000));
+            int okay = game.runSimulation(burnSource);
+            if (okay == 0) {
+                successCount++;
+            }
+        }
+
+        System.out.println("Number of successful tests: " + successCount);
+        System.out.println("Number of failed tests: " + (totalTests - successCount));
     }
 
 }
+
+
+

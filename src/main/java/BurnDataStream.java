@@ -12,7 +12,8 @@ public class BurnDataStream implements BurnStream {
     }
     @Override
     public int getNextBurn(DescentEvent status) {
-        if (burnIdx < burnArray.length) {
+        if (burnIdx < burnArray.length)
+        {
             burnIdx++;
             System.out.println(burnArray[burnIdx]); /*hack!*/
             return burnArray[burnIdx];
